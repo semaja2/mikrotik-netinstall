@@ -40,7 +40,7 @@ The below steps will create a container linking to `ether5`, and set netinstall 
     ```
 7. Create mount to contain npk files
     ```
-    /container mounts add dst=/data name=linux_data src=/disk1/docker/linux_data
+    /container mounts add dst=/app/images name=images src=/disk1/images
     ```
 8. Create enviroment set, and specify npk file to use
     ```
@@ -48,7 +48,7 @@ The below steps will create a container linking to `ether5`, and set netinstall 
     ```
 9. Create container
     ```
-    /container add envlist=NETINSTALL interface=veth1 logging=yes mounts=images workdir=/app
+    /container add remote-image=semaja2/mikrotik-netinstall:latest envlist=NETINSTALL interface=veth1 logging=yes mounts=images workdir=/app
     ```
 
 ## Usage with Podman
