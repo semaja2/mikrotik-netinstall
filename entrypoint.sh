@@ -18,5 +18,5 @@ fi
 if [[ $(uname -m) =~ (i[1-6]86|amd64) ]]; then
     exec /app/netinstall-cli $NETINSTALL_ARGS "-a" $NETINSTALL_ADDR /app/images/$NETINSTALL_NPK
 else
-    exec qemu-i386 /app/netinstall-cli $NETINSTALL_ARGS "-a" $NETINSTALL_ADDR /app/images/$NETINSTALL_NPK
+    exec /app/qemu-i386-static /app/netinstall-cli $NETINSTALL_ARGS "-a" $NETINSTALL_ADDR /app/images/$NETINSTALL_NPK
 fi
